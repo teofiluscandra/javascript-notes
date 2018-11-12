@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const name = 'Teo'
+    
+    const dict = {
+        "HTML": "Hyper Text Markup Language",
+        "CSS": "Cascading Style Sheets"
+    }
+
+    function addAbbreviations(strings, ...values){
+        const abbreviated = values.map(value => {
+            if(dict[value]) {
+                return `<abbr title="${dict[value]}">${value}</abbr>`
+            }
+            return value
+        })
+
+        return strings.reduce((sentence, string, i) => {
+            return `${sentence}${string}${abbreviated[i] || ''}`
+        })
+    }
+
+    const sentence = addAbbreviations `My name is ${name} and i love to code ${'HTML'}, ${'CSS'}`
+    console.log(sentence)
+    document.body.innerHTML = sentence
+
+
+</script>
+</html>

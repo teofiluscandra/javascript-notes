@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const post = {
+        title: 'Special Offers',
+        tag: ['special','holiday','summer']
+    }
+
+    const renderTags = (tags) => {
+        return `
+            <ul>
+                ${tags.map(tag => `<li>${tag}</li>`).join('')}
+            </ul>
+        `
+    }
+
+    const markup = `
+        <div>
+            <h2>${post.title}</h2>
+            ${renderTags(post.tag)}
+        </div>
+    `
+
+    document.body.innerHTML = markup
+</script>
+</html>
