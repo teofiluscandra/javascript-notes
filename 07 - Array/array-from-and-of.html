@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array From and Of</title>
+</head>
+<body>
+   <div class="people">
+       <p>A</p>
+       <p>B</p>
+       <p>C</p>
+   </div> 
+</body>
+<script>
+    const people = document.querySelectorAll('.people p')
+    // people is array is / NodeList and cannot override function map
+    // change to array
+
+    const peopleArray = Array.from(people)
+    const names = peopleArray.map(person => person.textContent)
+
+    // change arguments to array
+    function sumAll(){
+        const nums = Array.from(arguments)
+        return nums.reduce((prev, next) => prev + next, 0)
+    }
+
+    sumAll(2,34,23,12,23,34,23,22)
+
+    // array of
+    const ages = Array.of(12,3,12,3,2,2)
+    console.log(ages)
+</script>
+</html>
