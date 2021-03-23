@@ -4,3 +4,4 @@ node_modules/
 haters/
 *.log
 updates/
+.DS_Store
